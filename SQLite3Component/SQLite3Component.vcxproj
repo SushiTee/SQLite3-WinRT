@@ -30,14 +30,8 @@
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Constants.cpp" />
     <ClCompile Include="Database.cpp" />
-    <ClCompile Include="sqlite3.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_ENABLE_UNLOCK_NOTIFY;_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    <ClCompile Include="sqlite3secure.c">
+      <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsWinRT>
     </ClCompile>
     <ClCompile Include="Statement.cpp" />
   </ItemGroup>
@@ -46,7 +40,6 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="res\component_manifest.h" />
-    <ClInclude Include="sqlite3.h" />
     <ClInclude Include="Statement.h" />
   </ItemGroup>
   <ItemGroup>
@@ -139,7 +132,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_ENABLE_UNLOCK_NOTIFY;_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_HAS_CODEC;SQLITE_SOUNDEX;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_SECURE_DELETE;SQLITE_ENABLE_FTS4;SQLITE_ENABLE_FTS3_PARENTHESIS;SQLITE_ENABLE_RTREE;SQLITE_CORE;SQLITE_USE_URI;SQLITE_DEFAULT_PAGE_SIZE=4096;CODEC_TYPE=CODEC_TYPE_AES128;_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
@@ -151,7 +144,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_HAS_CODEC;SQLITE_SOUNDEX;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_SECURE_DELETE;SQLITE_ENABLE_FTS4;SQLITE_ENABLE_FTS3_PARENTHESIS;SQLITE_ENABLE_RTREE;SQLITE_CORE;SQLITE_USE_URI;SQLITE_DEFAULT_PAGE_SIZE=4096;CODEC_TYPE=CODEC_TYPE_AES128;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>

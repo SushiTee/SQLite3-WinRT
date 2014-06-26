@@ -38,6 +38,10 @@ namespace SQLite3 {
     Windows::Foundation::IAsyncOperation<Platform::String^>^ AllAsyncMap(Platform::String^ sql, ParameterMap^ params);
     Windows::Foundation::IAsyncAction^ EachAsyncVector(Platform::String^ sql, ParameterVector^ params, EachCallback^ callback);
     Windows::Foundation::IAsyncAction^ EachAsyncMap(Platform::String^ sql, ParameterMap^ params, EachCallback^ callback);
+	Windows::Foundation::IAsyncOperation<int>^ SetKeyAsyncVector(Platform::String^ key);
+	Windows::Foundation::IAsyncOperation<int>^ SetKeyAsyncMap(Platform::String^ key);
+	Windows::Foundation::IAsyncOperation<int>^ ChangeKeyAsyncVector(Platform::String^ key);
+	Windows::Foundation::IAsyncOperation<int>^ ChangeKeyAsyncMap(Platform::String^ key);
 
     Windows::Foundation::IAsyncAction^ VacuumAsync();
     
@@ -128,6 +132,9 @@ namespace SQLite3 {
     Windows::Foundation::IAsyncOperation<Platform::String^>^ AllAsync(Platform::String^ sql, ParameterContainer params);
     template <typename ParameterContainer>
     Windows::Foundation::IAsyncAction^ EachAsync(Platform::String^ sql, ParameterContainer params, EachCallback^ callback);
+
+	Windows::Foundation::IAsyncOperation<int>^ SetKeyAsync(Platform::String^ key);
+	Windows::Foundation::IAsyncOperation<int>^ ChangeKeyAsync(Platform::String^ key);
 
     static void __cdecl UpdateHook(void* data, int action, char const* dbName, char const* tableName, sqlite3_int64 rowId);
     void OnChange(int action, char const* dbName, char const* tableName, sqlite3_int64 rowId);

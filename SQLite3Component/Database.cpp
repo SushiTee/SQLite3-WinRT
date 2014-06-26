@@ -6,6 +6,8 @@
 #include <regex>
 #include <assert.h>
 
+#include "codecext.h"
+
 #include "Database.h"
 #include "Statement.h"
 
@@ -294,6 +296,46 @@ namespace SQLite3 {
         throw;
       }
     });
+  }
+
+  IAsyncOperation<int>^ Database::SetKeyAsyncVector(Platform::String^ key) {
+	  return SetKeyAsync(key);
+  }
+
+  IAsyncOperation<int>^ Database::SetKeyAsyncMap(Platform::String^ key) {
+	  return SetKeyAsync(key);
+  }
+
+  IAsyncOperation<int>^ Database::SetKeyAsync(Platform::String^ key) {
+	  return Concurrency::create_async([this, key] {
+		  try {
+			  return sqlite3_key(sqlite, key->Data(), key->Length());
+		  }
+		  catch (Platform::Exception^ e) {
+			  saveLastErrorMessage();
+			  throw;
+		  }
+	  });
+  }
+
+  IAsyncOperation<int>^ Database::ChangeKeyAsyncVector(Platform::String^ key) {
+	  return ChangeKeyAsync(key);
+  }
+
+  IAsyncOperation<int>^ Database::ChangeKeyAsyncMap(Platform::String^ key) {
+	  return ChangeKeyAsync(key);
+  }
+
+  IAsyncOperation<int>^ Database::ChangeKeyAsync(Platform::String^ key) {
+	  return Concurrency::create_async([this, key] {
+		  try {
+			  return sqlite3_rekey(sqlite, key->Data(), key->Length());
+		  }
+		  catch (Platform::Exception^ e) {
+			  saveLastErrorMessage();
+			  throw;
+		  }
+	  });
   }
 
   template <typename ParameterContainer>
