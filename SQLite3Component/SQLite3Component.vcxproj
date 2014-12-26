@@ -152,6 +152,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_HAS_CODEC;SQLITE_SOUNDEX;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_SECURE_DELETE;SQLITE_ENABLE_FTS4;SQLITE_ENABLE_FTS3_PARENTHESIS;SQLITE_ENABLE_RTREE;SQLITE_CORE;SQLITE_USE_URI;SQLITE_DEFAULT_PAGE_SIZE=4096;CODEC_TYPE=CODEC_TYPE_AES128;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,6 +178,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_HAS_CODEC;SQLITE_SOUNDEX;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_SECURE_DELETE;SQLITE_ENABLE_FTS4;SQLITE_ENABLE_FTS3_PARENTHESIS;SQLITE_ENABLE_RTREE;SQLITE_CORE;SQLITE_USE_URI;SQLITE_DEFAULT_PAGE_SIZE=4096;CODEC_TYPE_AES128;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -201,6 +205,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PreprocessorDefinitions>SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;SQLITE_HAS_CODEC;SQLITE_SOUNDEX;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_SECURE_DELETE;SQLITE_ENABLE_FTS4;SQLITE_ENABLE_FTS3_PARENTHESIS;SQLITE_ENABLE_RTREE;SQLITE_CORE;SQLITE_USE_URI;SQLITE_DEFAULT_PAGE_SIZE=4096;CODEC_TYPE_AES128;_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
