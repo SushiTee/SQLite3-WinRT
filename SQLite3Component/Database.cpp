@@ -70,7 +70,7 @@ namespace SQLite3 {
     Windows::ApplicationModel::Resources::ResourceLoader^ resourceLoader;
     const wchar_t* key;
     if (argc == 1) {
-      static auto defaultResourceLoader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
+      static auto defaultResourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView();
       resourceLoader = defaultResourceLoader;
 
       key = (wchar_t*)sqlite3_value_text16(argv[0]);
@@ -78,7 +78,7 @@ namespace SQLite3 {
       auto resourceMapName = ref new Platform::String((wchar_t*)sqlite3_value_text16(argv[0]));
       resourceLoader = resourceLoaders[resourceMapName];
       if (!resourceLoader) {
-        resourceLoader = ref new Windows::ApplicationModel::Resources::ResourceLoader(resourceMapName);
+        resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView(resourceMapName);
         resourceLoaders[resourceMapName] = resourceLoader;
       }
 
