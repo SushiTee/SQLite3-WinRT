@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <CodeSharingProject>248F659F-DAC5-46E8-AC09-60EC9FC95053</CodeSharingProject>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>772b7e2d-2322-45b6-88da-d308e9b0bd88</SharedGUID>
+    <ItemsProjectGuid>{3bc208f7-cdb7-4240-b3b1-862bb0afc82f}</ItemsProjectGuid>
+    <ItemsRootNamespace>SQLite3</ItemsRootNamespace>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Common.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Constants.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Database.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\SQLite3Component\sqlite3secure.c">
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <PreprocessorDefinitions>SQLITE_HAS_CODEC;SQLITE_SOUNDEX;SQLITE_ENABLE_COLUMN_METADATA;SQLITE_SECURE_DELETE;SQLITE_ENABLE_FTS3_PARENTHESIS;SQLITE_ENABLE_RTREE;SQLITE_CORE;SQLITE_USE_URI;SQLITE_DEFAULT_PAGE_SIZE=4096;CODEC_TYPE=CODEC_TYPE_AES128;SQLITE_ENABLE_FTS4;SQLITE_OS_WINRT;SQLITE_ENABLE_UNLOCK_NOTIFY;SQLITE_TEMP_STORE=2;_WINRT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Statement.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Common.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Constants.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Database.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\SQLite3Component\Statement.h" />
+  </ItemGroup>
+</Project>
